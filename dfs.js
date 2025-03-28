@@ -121,8 +121,7 @@ class DFSMazeApp{
 	    console.log(text)
 	   
 	    this.tryToFitTheMazeOnScreen();
-	    let mapText = document.getElementById("mapText");
-	    mapText.textContent = "";
+
 	    for(let x = 0; x < text.length - 2; x++){ //last 2 lines are start and stop (and possibly an empty line => which I removed already)
 
 	    	let row = text[x].split("")
@@ -130,19 +129,18 @@ class DFSMazeApp{
 	    	const tr = this.graphicalMaze.insertRow();
 	    	
 	    	//the 2D array, storing the maze in place
-				this.maze.push(row); 
-	    	mapText.textContent += row + "\n";
+			this.maze.push(row); 
 
 	    	for(let y of row){
-					const td = tr.insertCell();
-					const div = document.createElement("div");
-					div.className = "s";
-					td.appendChild(div);
+				const td = tr.insertCell();
+				const div = document.createElement("div");
+				div.className = "s";
+				td.appendChild(div);
 	  			if(y == "X"){
 	  				td.classList.add("green");
 	  			}
 	    	}
-			}
+		}
 
 	   	let k;
 	    if(text[this.pocetRows - 1].includes("end")){
