@@ -394,11 +394,11 @@ document.getElementById('inputfile').addEventListener('change', function(event) 
 			text = fr.result.split("\n");
 		}
         if(mazeAppClassHolderVariable != undefined){
-	   			mazeAppClassHolderVariable.zcelaHotovo = true;
-	   			mazeAppClassHolderVariable.hideMaze();
-	   		}
-	   		mazeAppClassHolderVariable = new DFSMazeApp();
-   			mazeAppClassHolderVariable.renderMaze(text);
+			mazeAppClassHolderVariable.zcelaHotovo = true;
+			mazeAppClassHolderVariable.hideMaze();
+		}
+		mazeAppClassHolderVariable = new DFSMazeApp();
+		mazeAppClassHolderVariable.renderMaze(text);
         mazeAppClassHolderVariable.startDFS(); //entry point to our actual program
     }
     fr.readAsText(this.files[0]);
